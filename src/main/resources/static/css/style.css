@@ -1,0 +1,109 @@
+.container-form{
+    padding-top:50px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-form form{
+    display: inline-block;
+    padding: 15px;
+    border: dashed #fed8b1;
+    border-radius: 10px;
+}
+
+nav img{
+    width: 4em;
+}
+
+nav{
+    display:flex !important;
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0px;
+    background-color: #fed8b1;
+    z-index:10000;
+    font-size:1.5em;
+}
+
+.img-user{
+    width:100px;
+}
+
+.img-product{
+    width:150px;
+}
+
+.border-container{
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+input[type='number']{
+    width: 50px;
+}
+
+article, .list-shopping-users{
+    padding:5px;
+}
+
+article input, article img {
+    margin: 2px;
+}
+
+.container-page{
+    padding:10px;
+}
+
+
+footer{
+    padding-top:10px
+}
+
+.border-right-giver{
+    border-right: 1px solid;
+}
+
+.add-list-button{
+    margin:10px;
+}
+
+/*.plus-btn, .minus-btn{*/
+/*    background-color:transparent;*/
+/*    border: transparent;*/
+/*}*/
+
+.search-btn, .manage-list-btn, .add-list-btn, .check-btn{
+    background-color:transparent;
+    border: 1px solid #ced4da;
+    border-radius:5px;
+}
+
+.plus-img, .minus-img, .check-img{
+    width:40px;
+}
+
+.search-btn{
+    border-radius: 10px 0 0 10px;
+}
+
+.search-btn img{
+    width:1em;
+}
+
+.search-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.search-input{
+    border: 1px solid #ced4da;
+    border-radius: 0 10px 10px 0;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+a:hover{
+    text-decoration: none;
+}

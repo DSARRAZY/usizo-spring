@@ -1,0 +1,14 @@
+<section class="index-list">
+  <article class="d-flex flex-row align-items-center border-5">
+  </article>
+  <article class="d-flex flex-row align-items-center border-3" th:id="${sl.id}" th:each="need : ${sl.needList}">
+    <img class="img-product" th:src="${need.product.getImgUrl}" loading="lazy" alt="" height="">
+
+    <p class="pr-2" th:text="${'x' + need.quantity}"></p>
+    <p class="font-weight-bold" th:text="${need.product.getNom()}"></p>
+    <button class="d-flex align-items-center check-btn">
+      <img class="check-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Check_green_circle.svg/2048px-Check_green_circle.svg.png" alt="check symbol"/>
+      Cocher le besoin
+    </button>
+    </article>
+</section>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<section class="index-list">
+  <article class="d-flex flex-row align-items-center border-5">
+    <div class="div-block-31" th:onclick="'modList(\'' + ${sl.id} + '\');'">Modifier</div>
+  </article>
+  <article class="d-flex flex-row align-items-center border-3" th:each="member : ${sl.members}">
+    <p th:text="${member.getNom()}"></p>
+    <img class="img-product" th:src="${member.getImgUrl()}" loading="lazy" alt="" height="">
+    <div class="div-block-36" th:onclick="'remUser(\'' + ${sl.id} + '\',\'' + ${member.getId()} +'\');'">X</div>
+  </article>
+</section>
+
+</body>
+</html>

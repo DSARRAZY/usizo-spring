@@ -1,0 +1,17 @@
+<section class="col-lg-12 col-xl-6 d-flex flex-column align-items-center">
+    <article class="article-index d-flex flex-row justify-content-between w-100 border border-5" th:id="${sl.id}" th:each="sl : ${user.shoppingLists}" onclick="getList(this)">
+        <div>
+            <p th:text="${sl.name}"/>
+        </div>
+        <div class="d-flex flex-row border border-3">
+            <div>
+                <img class="img-user" th:src="${member.getImgUrl()}" alt="profil picture 2" th:each="member : ${sl.members}" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button class="custom btn btn-danger btn shadow rounded-pill" th:onclick="'remList(\'' + ${user.getId()} + '\',\'' + ${sl.id} +'\');'">Enlever la liste</button>
+            <button class="manage-list-btn"><a th:href="@{'/shoppingListManager?id=' + ${sl.id}}">Gérer la liste</a></button>
+        </div>
+    </article>
+    <button class="add-list-btn" th:onclick="'addList(\'' + ${user.getId()} + '\');'">Ajouter une liste</button>
+</section>

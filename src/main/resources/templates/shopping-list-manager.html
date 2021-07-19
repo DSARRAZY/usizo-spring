@@ -1,0 +1,72 @@
+<div th:replace="header.html"/>
+
+<div class="col container-page">
+
+  <h2 class="text-center" th:text="${sList.name}"/>
+
+  <section class= "mb-3">
+    <div class="d-flex justify-content-center align-items-center">
+      <img class="img-user" th:src="${member.getImgUrl()}" alt="profil picture 2" th:each="member : ${sList.members}" />
+      <img class="plus-img" src="https://icons-for-free.com/iconfiles/png/512/circle+download+plus+icon-1320086208811198918.png" alt="logo plus"/>
+    </div>
+  </section>
+
+  <div class="row">
+  <section class="col-lg-12 col-xl-6 border-right-giver">
+    <h3>Modifier et enlever des besoins :</h3>
+    <article class="d-flex flex-row align-items-center border-container" th:id="${need.id}" th:each="need : ${sList.needList}">
+      <form name="form-Product" data-name="Product" method="post" action="remNeed" class="form">
+        <input type="number" name="id" data-name="id" id="id" required="" th:value="${sList.id}" style="display:none">
+        <input type="number" name="idP" data-name="idP" id="idP" required="" th:value="${need.id}" style="display:none">
+        <img class="img-product" th:src="${need.product.getImgUrl}" loading="lazy" alt="" height="">
+        <input id="number" type="number" th:value="${need.quantity}" min="0"/>
+        <p class="m-0" th:text="${need.product.getNom()}"/>
+        <input type="image" class="minus-img" src="https://i.ibb.co/wRTBjFr/minus-icon.png" alt="logo minus"/>
+      </form>
+    </article>
+  </section>
+
+    <section class="col-lg-12 col-xl-6">
+      <h3>Ajouter un besoin :</h3>
+      <div class="d-flex">
+        <button type="button" class="search-btn">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Search_Noun_project_15028.svg/1046px-Search_Noun_project_15028.svg.png" alt="search icon">
+        </button>
+        <input type="text" class="search-input" placeholder="Nom de produit"/>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+        <article class="d-flex flex-row align-items-center border-container" th:id="${need.id}" th:each="need : ${needs}">
+          <input
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+          />
+          <img class="img-product" th:src="${need.product.getImgUrl}" loading="lazy" alt="" height="">
+          <input type="number" th:value="${need.quantity}" min="0"/>
+          <p th:text="${product.nom}}"/>
+        </article>
+      <article class="d-flex flex-row align-items-center border-container" th:each="product : ${products}">
+        <form id="formProd" name="form-Product" data-name="Product" method="post" action="addNeed" class="form">
+          <input type="number" name="id" data-name="id" id="id" required="" th:value="${sList.id}" style="display:none">
+          <input type="number" name="idP" data-name="idP" id="idP" required="" th:value="${product.id}" style="display:none">
+          <input type="image" class="plus-img" src="https://icons-for-free.com/iconfiles/png/512/circle+download+plus+icon-1320086208811198918.png" alt="logo plus" />
+          <img class="img-product" th:src="${product.getImgUrl}" loading="lazy" alt="" height="">
+          <p th:text="${product.nom}"/>
+          <input type="number" name="number" value="1" min="1"/>
+        </form>
+      </article>
+    </section>
+  </div>
+
+</div>
+
+<div th:replace="footer.html"/>
